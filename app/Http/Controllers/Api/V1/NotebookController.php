@@ -12,7 +12,7 @@ class NotebookController extends \App\Http\Controllers\Controller
 {
     public function index()
     {
-        return NotebookResource::collection(Notebook::all());
+        return NotebookResource::collection(Notebook::paginate(10));
     }
 
     public function store(NotebookStoreRequest $request)
